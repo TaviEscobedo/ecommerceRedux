@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import axios from 'axios'
+import Loader from  './Loader'
 import { useParams } from 'react-router'
 import {useDispatch,useSelector} from 'react-redux'
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productsAction'
@@ -32,7 +33,7 @@ const ProductDetail = () => {
         
               
             <div className="detail_container">
-            { Object.keys(product).length === 0?(<div class="lds-dual-ring"></div>):
+            { Object.keys(product).length === 0?(<Loader/>):
             (
                 <>
             <div className="detail_image">

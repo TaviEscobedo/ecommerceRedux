@@ -1,14 +1,16 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
+import Loader from './Loader'
 
 const ProductComponent = () => {
     const products= useSelector(state=>state.allProducts.products)
     // console.log('useSelector',products);
     // const {id, title,category,price,image}= products
+    console.log("productCompo",typeof(products),products);
     return (
 
-        
+        Object.keys(products).length === 0?(<Loader/>):
             products.map(item =>(
                 
                 
